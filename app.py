@@ -29,15 +29,23 @@ if uploaded_file is not None:
     
     @st.cache_resource
     def load_model():
+        from huggingface_hub import hf_hub_download
+
         model_path = "model/best.pt"
         
         # Download if not exists
         if not os.path.exists(model_path):
             os.makedirs("model", exist_ok=True)
-            # For Hugging Face
-            from huggingface_hub import hf_hub_download
-            hf_hub_download(repo_id="ggtejas/cots-detector", 
-                           filename="best.pt")
+            downloaded_model_path = hf_hub_download(
+                repo_id="ggtejas/cots-detection",
+                filename="best.pt",
+                local_dir="model",
+                local_dir_use_symlinks=False
+            )
+            model_path = downloaded_model_path
+
+        return YOLO(model_path)
+
         
         return YOLO(model_path)
 
