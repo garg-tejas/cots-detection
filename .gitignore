@@ -2,7 +2,7 @@ datasets/
 runs/
 tensorflow-great-barrier-reef/
 __pycache__/
-yolov11n.pt
+yolo11n.pt
 yolov8n.pt
 
 !runs/detect/train/weights/best.pt
