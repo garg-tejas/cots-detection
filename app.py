@@ -37,8 +37,7 @@ if uploaded_file is not None:
             # For Hugging Face
             from huggingface_hub import hf_hub_download
             hf_hub_download(repo_id="ggtejas/cots-detector", 
-                           filename="best.pt", 
-                           local_dir="model")
+                           filename="best.pt")
         
         return YOLO(model_path)
 
