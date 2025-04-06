@@ -1,5 +1,8 @@
-streamlit>=1.28.0
-ultralytics>=8.0.0
-Pillow>=10.0.0
-pandas>=2.0.0
-torch>=2.0.0
+pandas
+scikit-learn
+tqdm
+streamlit
+ultralytics
+Pillow
+torch
+huggingface_hub
