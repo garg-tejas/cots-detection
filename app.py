@@ -23,31 +23,30 @@ if uploaded_file is not None:
         temp_path = temp_file.name
     
 # WHILE RUNNING LOCALLY
-    # @st.cache_resource
-    # def load_model():
-    #     return YOLO('runs/detect/train/weights/best.pt')
-    
     @st.cache_resource
     def load_model():
-        from huggingface_hub import hf_hub_download
+        return YOLO('runs/detect/train/weights/best.pt')
+    
 
-        model_path = "model/best.pt"
+    #HUGGING FACE MODEL not working will fix later !
+    # @st.cache_resource
+    # def load_model():
+    #     from huggingface_hub import hf_hub_download
+
+    #     model_path = "model/best.pt"
         
-        # Download if not exists
-        if not os.path.exists(model_path):
-            os.makedirs("model", exist_ok=True)
-            downloaded_model_path = hf_hub_download(
-                repo_id="ggtejas/cots-detection",
-                filename="best.pt",
-                local_dir="model",
-                local_dir_use_symlinks=False
-            )
-            model_path = downloaded_model_path
+    #     # Download if not exists
+    #     if not os.path.exists(model_path):
+    #         os.makedirs("model", exist_ok=True)
+    #         downloaded_model_path = hf_hub_download(
+    #             repo_id="ggtejas/cots-detection",
+    #             filename="best.pt",
+    #             local_dir="model",
+    #             local_dir_use_symlinks=False
+    #         )
+    #         model_path = downloaded_model_path
 
-        return YOLO(model_path)
-
-        
-        return YOLO(model_path)
+    #     return YOLO(model_path)
 
     predict_button = st.button("🔍 Predict COTS")
     
