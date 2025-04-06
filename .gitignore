@@ -1,8 +1,21 @@
+# Ignore datasets and training outputs
 datasets/
-runs/*
 tensorflow-great-barrier-reef/
-__pycache__/
-yolo11n.pt
-yolov8n.pt
 
+# Ignore runs but keep best.pt
+runs/*
 !runs/detect/train/weights/best.pt
+
+# Ignore python cache
+__pycache__/
+
+# Ignore all model weight files
+*.pt
+# (Don't worry, `!runs/detect/train/weights/best.pt` still works even after this)
+
+# Ignore downloaded model cache
+model/
+
+# Ignore temp files
+*.tmp
+*.temp

@@ -1,15 +1,24 @@
-# COTS Detection App
+# 🌊 COTS Detection App
 
-## 🌊 Overview
+### Crown-of-Thorns Starfish Detection in Underwater Images
 
-The COTS Detection App is an interactive web application that uses computer vision to identify and classify crown-of-thorns starfish (COTS) in underwater images from the Great Barrier Reef. Built with Streamlit and YOLOv8, it provides real-time detection with bounding boxes and confidence scores. This project leverages the "TensorFlow - Help Protect the Great Barrier Reef" dataset to contribute to coral reef conservation efforts.
+---
+
+## 📖 Overview
+
+The **COTS Detection App** is an interactive web tool that leverages **YOLOv8** and **Streamlit** to automatically detect and classify **Crown-of-Thorns Starfish (COTS)** in reef images.  
+Built using the _TensorFlow - Help Protect the Great Barrier Reef_ dataset, this app aims to assist marine conservation efforts by providing fast, accurate detection of a major threat to coral ecosystems.
+
+---
 
 ## ✨ Features
 
-- Upload reef images in common formats (JPG, JPEG, PNG)
-- Detect crown-of-thorns starfish with visual bounding boxes
-- Display detection results with confidence scores
-- User-friendly interface with simple, intuitive controls
+- 📸 Upload reef images (JPG, JPEG, PNG)
+- 🧠 Real-time COTS detection with bounding boxes
+- 🎯 Displays confidence scores for each detection
+- 🖥️ Simple and intuitive Streamlit-based interface
+
+---
 
 ## 🚀 Installation
 
@@ -20,46 +29,59 @@ The COTS Detection App is an interactive web application that uses computer visi
 
 ### Setup
 
-1. Clone the repository:
+```bash
+git clone https://github.com/garg-tejas/cots-detection.git
+cd cots-detection
+pip install -r requirements.txt
+```
 
-   ```bash
-   git clone https://github.com/garg-tejas/cots-detection.git
-   cd cots-detection
-   ```
+> **Note:** Make sure you have your trained model file at:
+>
+> ```
+> runs/detect/train/weights/best.pt
+> ```
 
-2. Install the required dependencies:
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. Make sure you have the trained model in the correct location:
-   ```
-   runs/detect/train/weights/best.pt
-   ```
+---
 
 ## 🔍 Usage
 
-1. Start the Streamlit application:
+Start the application locally:
 
-   ```bash
-   streamlit run app.py
-   ```
+```bash
+streamlit run app.py
+```
 
-2. Open your web browser and go to the provided URL (typically http://localhost:8501)
+Then open your browser at [http://localhost:8501](http://localhost:8501).
 
-3. Upload a reef image using the file uploader
+### How to Use
 
-4. Click the "Predict COTS" button to run the detection
+1. Upload an underwater reef image.
+2. Click **"Predict COTS"**.
+3. View the image with bounding boxes and detection confidence.
 
-5. View the results with bounding boxes and detailed information about detected starfish
+---
 
-## 🧠 Model Information
+## 🧠 Model Details
 
-The application uses a YOLOv8 model trained on the "TensorFlow - Help Protect the Great Barrier Reef" dataset. This dataset was created to help detect crown-of-thorns starfish, which pose a significant threat to coral reefs by feeding on coral polyps. Early detection of these starfish can help conservation teams take action to protect the Great Barrier Reef ecosystem.
+This project uses a **YOLOv8** model trained on the _TensorFlow - Help Protect the Great Barrier Reef_ dataset.  
+It can reliably identify Crown-of-Thorns Starfish in various underwater environments, helping marine biologists and conservation teams intervene before large-scale reef damage occurs.
 
-The model is capable of identifying crown-of-thorns starfish in underwater imagery with high accuracy, providing a valuable tool for marine conservationists and researchers.
+---
 
-## 📋 Requirements
+## 📦 Requirements
 
-Check requirements.txt for the full list of dependencies.
+See [`requirements.txt`](requirements.txt) for the full list of dependencies.
+
+---
+
+## ❤️ Acknowledgements
+
+- [TensorFlow - Great Barrier Reef Challenge](https://www.kaggle.com/competitions/tensorflow-great-barrier-reef)
+- [Ultralytics YOLOv8](https://docs.ultralytics.com/)
+- [Streamlit](https://streamlit.io/)
+
+---
+
+# 📸 Demo
+
+![App Demo](demo/demo.gif)
